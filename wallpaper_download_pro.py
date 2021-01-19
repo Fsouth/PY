@@ -43,5 +43,8 @@ if __name__ == '__main__':
         q.put(url)
     while not q.empty():
         for i in range(5):
-            t = threading.Thread(target=get_img,args=(q.get(),))
-            t.start()
+            try:
+                t = threading.Thread(target=get_img,args=(q.get(block=False),))   #block参数防止堵塞
+                t.start()
+            except:
+                pass
