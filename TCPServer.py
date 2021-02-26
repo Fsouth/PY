@@ -5,8 +5,8 @@ from socket import *
 # *服务器配置文件
 
 serverSocket = socket(AF_INET, SOCK_STREAM)
-
-serverSocket.bind((gethostname(), 1201))  # gethostname() 连接服务器则换成服务器的内网ip,本机连接则填name(与客户端相同)
+# ! 服务器要开放1201端口
+serverSocket.bind((gethostname(), 1201))  # gethostname() 连接服务器则换成服务器的内网ip,字符串格式,如'192.123.2.12',本机连接不需要改动(与客户端相同)
 serverSocket.listen(5)
 print("-----start-----")
 connectionSocket, address = serverSocket.accept()
