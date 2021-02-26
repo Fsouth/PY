@@ -5,8 +5,8 @@ import getpass
 """         客户端          """
 # *客户端配置文件
 
-host_name = gethostname()  # 与服务器连接填服务器公网ip /本机连接获取name,  gethostname()
-port_num = 1201
+host_name = gethostname()  #  gethostname() 与服务器连接则换成服务器公网ip 如'21.32.214.13' /本机连接获取name, 
+port_num = 1201  # ! 服务器开放1201端口
 computer_name = gethostname()
 user_name = getpass.getuser()
 clientSocket = socket(AF_INET, SOCK_STREAM)
